@@ -1,0 +1,44 @@
+strict digraph "" {
+	node [label="\N"];
+	helper_A	[label=helper_A,
+		raw_id=helper_A];
+	add	[label=add,
+		raw_id=add];
+	helper_A -> add;
+	cycle_2	[label=cycle_2,
+		raw_id=cycle_2];
+	cycle_1	[label=cycle_1,
+		raw_id=cycle_1];
+	cycle_2 -> cycle_1;
+	cycle_1 -> cycle_2;
+	process	[label=process,
+		raw_id=process];
+	compute_product	[label=compute_product,
+		raw_id=compute_product];
+	process -> compute_product;
+	compute_series	[label=compute_series,
+		raw_id=compute_series];
+	process -> compute_series;
+	helper_B	[label=helper_B,
+		raw_id=helper_B];
+	process -> helper_B;
+	multiply	[label=multiply,
+		raw_id=multiply];
+	compute_product -> multiply;
+	compute_series -> add;
+	square	[label=square,
+		raw_id=square];
+	compute_series -> square;
+	square -> multiply;
+	helper_B -> helper_A;
+	helper_B -> square;
+	main	[label=main,
+		raw_id=main];
+	main -> cycle_1;
+	main -> process;
+	"main.c"	[label="main.c",
+		raw_id="main.c"];
+	"stdio.h"	[label="stdio.h",
+		raw_id="stdio.h"];
+	"main.c" -> "stdio.h";
+}
