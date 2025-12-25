@@ -27,11 +27,11 @@ compiler front-ends, real-time systems, and large-scale C architectures.
 
 
 ## 2. Repository Structure
-/src/               # C source programs for analysis
-/graphs/            # Raw and reduced call-graph DOT files
-/analysis/          # Python code for metrics, centrality scoring, CPSA, FMD
-/figures/           # Generated call-graph visualizations
-/paper/             # Manuscript, results, references, and supplementary material
+- /src/               # C source programs for analysis
+- /graphs/            # Raw and reduced call-graph DOT files
+- /analysis/          # Python code for metrics, centrality scoring, CPSA, FMD
+- /figures/           # Generated call-graph visualizations
+- /paper/             # Manuscript, results, references, and supplementary material
 
 ## 3. Features
 
