@@ -32,6 +32,7 @@ compiler front-ends, real-time systems, and large-scale C architectures.
 - /analysis/          # Python code for metrics, centrality scoring, CPSA, FMD
 - /figures/           # Generated call-graph visualizations
 - /paper/             # Manuscript, results, references, and supplementary material
+- /temp/              # Files found after running doxygen
 
 ## 3. Features
 
