@@ -1,101 +1,93 @@
-Static Structural Call-Graph Analysis (SSCA) for C Programs
+# Static Structural Call-Graph Analysis (SSCA) for C Programs
 
-This repository provides the full implementation, datasets, and supporting material for the Static Structural Call-Graph Analysis (SSCA) Strategy—an architectural analysis methodology designed to uncover structural bottlenecks, deep call chains, modular boundaries, and optimization opportunities in C programs. The workflow integrates static analysis, graph-theoretic metrics, centrality scoring, critical-path detection, and optional dynamic profiling.
+This repository provides the implementation, datasets, and artifacts for the
+**Static Structural Call-Graph Analysis (SSCA)** Strategy—an architectural
+analysis workflow for identifying structural bottlenecks, deep call chains,
+modular boundaries, and optimization opportunities in C programs.
 
-1. Overview
+SSCA integrates static call-graph extraction, graph-theoretic metrics,
+centrality scoring, critical-path detection, modularity analysis, and optional
+dynamic profiling to support optimization-oriented architectural reasoning.
 
-SSCA is a structured technique for analyzing the architecture of C codebases using call-graph–driven insights. It enables developers and researchers to:
 
-Detect architecturally influential functions
+## 1. Overview
 
-Identify dispatcher nodes, hubs, and coordination points
+SSCA enables developers and researchers to:
 
-Discover modular boundaries via community detection
+- Identify architecturally influential functions.
+- Detect dispatcher nodes, hubs, and coordination points.
+- Highlight deep structural call chains and critical paths.
+- Extract modular boundaries via community detection.
+- Compute structural metrics (betweenness, PageRank, degree).
+- Identify dead or unreachable functions using reachability models.
+- Combine static structure with dynamic profiling (gprof/PMU).
 
-Highlight deep structural call chains
+The methodology is applicable across embedded systems, IoT firmware,
+compiler front-ends, real-time systems, and large-scale C architectures.
 
-Quantify structural complexity with graph metrics
 
-Locate and remove unreachable (dead) functions
-
-Combine static and dynamic performance signals for prioritization
-
-The methodology is applicable to embedded systems, IoT firmware, compilers, real-time systems, and any C-based architecture requiring optimization or refactoring.
-
-2. Repository Structure
+## 2. Repository Structure
 /src/               # C source programs for analysis
 /graphs/            # Raw and reduced call-graph DOT files
 /analysis/          # Python code for metrics, centrality scoring, CPSA, FMD
 /figures/           # Generated call-graph visualizations
 /paper/             # Manuscript, results, references, and supplementary material
 
-3. Features
+## 3. Features
 
-Static Call-Graph Extraction: Doxygen + GraphViz–based pipeline
+- **Static Call-Graph Extraction** using Doxygen + GraphViz.
+- **Structural Metrics** including betweenness, PageRank, and out-degree.
+- **Structural Centrality Scoring (SCS)** for prioritizing influential nodes.
+- **Critical Path Structural Analysis (CPSA)** to detect deep call chains.
+- **Functional Modularity Detection (FMD)** using Louvain clustering.
+- **Dead-Code Identification** via reachability from entry points.
+- **Static–Dynamic Comparative Interpretation** for profiling-based refinement.
 
-Structural Metrics: Betweenness, PageRank, degree measures
 
-Structural Centrality Scoring (SCS): A normalized model combining multiple metrics
+## 4. Getting Started
 
-Critical Path Structural Analysis (CPSA): Deep-chain detection
+### Prerequisites
 
-Functional Modularity Detection (FMD): Louvain-based module extraction
+- Python 3.9+
+- NetworkX
+- PyGraphviz
+- Doxygen
+- GraphViz
+- (Optional) `gprof` for runtime profiling
 
-Dead-Code Detection: Reachability analysis from entry points
-
-Static–Dynamic Comparative Framework: Integration with gprof or PMU data
-
-4. Getting Started
-Prerequisites
-
-Python 3.9+
-
-NetworkX
-
-PyGraphviz
-
-Doxygen
-
-GraphViz
-
-(Optional) gprof for runtime profiling
-
-Installation
+### Installation
 pip install -r requirements.txt
 
-Run Analysis
+### Running the Analysis
 python analysis/run_scca.py --input src/
 
-5. Example Outputs
 
-Complete call graph (DOT + PNG)
 
-Reduced call graph highlighting central structures
+## 5. Example Outputs
 
-CSV/JSON reports containing:
+The pipeline generates:
 
-Centrality metrics
+- Full call graph (DOT/PNG)
+- Reduced call graph highlighting structural centers
+- CSV/JSON reports containing:
+  - Structural metrics
+  - Critical paths
+  - Modular clusters
+  - Dead-code listings
+- Ranked Structural Centrality Scores (SCS)
 
-Critical paths
 
-Modular clusters
+## 6. Results Summary
 
-Dead-code list
+Applied to a representative C program (13 functions, 15 edges), SSCA achieves:
 
-Structural Centrality Score rankings
+- **15.38% dead-code reduction**
+- **Critical path detection of depth 5**
+- **32% improvement in prioritization accuracy** compared to PageRank alone
+- Clear modular boundaries and dispatcher-centric architectural patterns
 
-6. Results Summary
 
-Applied to a representative C program (13 functions, 15 edges), SSCA:
+## 7. Citation
 
-Reduced dead code by 15.38%
-
-Identified a structural critical path of depth 5
-
-Improved prioritization accuracy by 32% compared to PageRank alone
-
-Revealed clear modular boundaries and dispatcher-centric architecture
-
-7. Citation
-
-If you use SSCA or the associated dataset in academic work, please cite the paper (add BibTeX or citation once finalized).
+If you use SSCA or this dataset in academic work, please cite the corresponding
+paper (citation block will be added once finalized).
