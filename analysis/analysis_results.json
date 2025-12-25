@@ -1,0 +1,98 @@
+{
+  "nodes": 13,
+  "edges": 15,
+  "dead_code": [],
+  "hot_paths": [
+    {
+      "path": [
+        "main",
+        "process",
+        "helper_B",
+        "square",
+        "multiply"
+      ],
+      "score": 0.12179487179487179
+    },
+    {
+      "path": [
+        "main",
+        "process",
+        "helper_B",
+        "helper_A",
+        "add"
+      ],
+      "score": 0.12179487179487179
+    },
+    {
+      "path": [
+        "main",
+        "process",
+        "compute_series",
+        "square",
+        "multiply"
+      ],
+      "score": 0.12179487179487179
+    },
+    {
+      "path": [
+        "main",
+        "process",
+        "helper_B",
+        "helper_A"
+      ],
+      "score": 0.10897435897435898
+    },
+    {
+      "path": [
+        "main",
+        "process",
+        "helper_B",
+        "square"
+      ],
+      "score": 0.10256410256410256
+    },
+    {
+      "path": [
+        "main",
+        "process",
+        "compute_series",
+        "square"
+      ],
+      "score": 0.10256410256410256
+    },
+    {
+      "path": [
+        "main",
+        "process",
+        "compute_series",
+        "add"
+      ],
+      "score": 0.10256410256410256
+    },
+    {
+      "path": [
+        "main",
+        "process",
+        "compute_product",
+        "multiply"
+      ],
+      "score": 0.09615384615384615
+    },
+    {
+      "path": [
+        "main",
+        "process",
+        "helper_B"
+      ],
+      "score": 0.08333333333333333
+    },
+    {
+      "path": [
+        "main",
+        "process",
+        "compute_series"
+      ],
+      "score": 0.08333333333333333
+    }
+  ]
+}

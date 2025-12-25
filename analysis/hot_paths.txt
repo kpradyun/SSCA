@@ -1,0 +1,40 @@
+Hot Path #1
+Score: 0.121795
+main -> process -> helper_B -> square -> multiply
+
+Hot Path #2
+Score: 0.121795
+main -> process -> helper_B -> helper_A -> add
+
+Hot Path #3
+Score: 0.121795
+main -> process -> compute_series -> square -> multiply
+
+Hot Path #4
+Score: 0.108974
+main -> process -> helper_B -> helper_A
+
+Hot Path #5
+Score: 0.102564
+main -> process -> helper_B -> square
+
+Hot Path #6
+Score: 0.102564
+main -> process -> compute_series -> square
+
+Hot Path #7
+Score: 0.102564
+main -> process -> compute_series -> add
+
+Hot Path #8
+Score: 0.096154
+main -> process -> compute_product -> multiply
+
+Hot Path #9
+Score: 0.083333
+main -> process -> helper_B
+
+Hot Path #10
+Score: 0.083333
+main -> process -> compute_series
+
